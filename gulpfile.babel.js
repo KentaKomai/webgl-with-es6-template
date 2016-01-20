@@ -11,10 +11,10 @@ gulp.task('serve', () => {
   exec(`python -m SimpleHTTPServer ${port}`)
 })
 
-gulp.task('run', ['watch'], () => {
+gulp.task('run', ['build', 'watch'], () => {
   gulp.start('serve')
 })
 
-gulp.task('default', ['watch'], () => {
-  gulp.start('serve')
+gulp.task('default', () => {
+  gulp.start('run')
 })
