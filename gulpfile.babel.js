@@ -8,7 +8,8 @@ import './gulp/task/test.babel'
 gulp.task('serve', () => {
   let port = 4343
   console.dir(`start http server(port ${port})`)
-  exec(`python -m SimpleHTTPServer ${port}`)
+  exec(`python -m SimpleHTTPServer ${port}`) // for python 2.x
+  //exec(`python -m http.server ${port}`) // for python 3.x
 })
 
 gulp.task('run', ['build', 'watch'], () => {
